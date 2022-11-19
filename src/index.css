@@ -1,13 +1,229 @@
-body {
+/* ===== Common styles ===== */
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+}
+
+svg {
+  display: block;
+}
+
+.body {
+  background-color: #0079bf;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+/* ===== Header styles ===== */
+
+.header__layout,
+.main__layout,
+.footer__layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: inherit;
+}
+
+.header,
+.footer {
+  background-color: #0067a3;
+}
+
+/* .header {
+} */
+
+.header__layout {
+  min-height: 55px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__title {
+  font-weight: 400;
+  font-size: 1.75rem;
+  margin-top: 11px;
+  padding-right: 20px;
+}
+
+.header__user,
+.header__user_clicked {
+  display: block;
+  width: 60px;
+  height: 40px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.header__user {
+  background: url("./img/arrow-down.png") no-repeat right center;
+}
+
+.header__user_clicked {
+  background: url("./img/arrow-up.png") no-repeat right center;
+}
+
+.main {
+  flex: 9;
+}
+
+.footer {
+  padding: 17px 20px;
+}
+
+/* ===== Header mobile styles ===== */
+
+@media screen and (max-width: 768px) {
+  .header__title {
+    font-size: 1.5rem;
+    margin-bottom: 11px;
+  }
+}
+
+/* ===== Main styles ===== */
+
+.main__layout {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.list {
+  flex: 1;
+  margin: 0 10px;
+  padding: 12px 0 12px 12px;
+  background-color: #ebecf0;
+  border-radius: 10px;
+  color: black;
+}
+
+.list:first-child {
+  margin-left: 0px;
+}
+.list:last-child {
+  margin-right: 0px;
+}
+
+.list__title {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.list__item {
+  list-style: none;
+  font-size: 1.125rem;
+  line-height: 1.25rem;
+  padding: 7px 8px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.list__scroll {
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+  padding-right: 12px;
+}
+
+.list__scroll::-webkit-scrollbar {
+  width: 12px;
+  border-radius: 20px;
+  padding: 0 20px;
+}
+
+.list__scroll::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 20px;
+}
+
+.list__scroll::-webkit-scrollbar-thumb {
+  background: #cbcbcb;
+  border-radius: 20px;
+}
+
+.list__scroll::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+  border-radius: 20px;
+}
+
+/* ===== Main mobile styles ===== */
+
+@media screen and (max-width: 768px) {
+  .main__layout {
+    flex-direction: column;
+  }
+
+  .list {
+    margin: 0px 0px 50px;
+    width: calc(100% - 12px);
+  }
+}
+
+.button {
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 4px 6px 2px 4px;
+  min-width: 100px;
+}
+
+.button_add-card {
+  color: #5e6c84;
+  background-color: inherit;
+}
+
+.button_add-card:hover {
+  background-color: #fff;
+}
+
+.button-add-card__label {
+  padding-left: 18px;
+  min-height: 14px;
+  background: url(../src/img/add-card.svg) left 2px no-repeat;
+}
+
+.button_submit-active {
+  background-color: #0079bf;
+  color: #fff;
+}
+
+.button_submit-active:hover {
+  background-color: #0067a3;
+}
+
+.button_submit-active:active {
+  background-color: #0079bf;
+}
+
+.button_submit-inactive {
+  background-color: #cbcbcb;
+  color: #fff;
+  cursor: auto;
+}
+
+.input {
+  font-size: 1.125rem;
+  line-height: 1.25rem;
+  padding: 7px 8px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: none;
+  width: calc(100% - 16px);
 }
