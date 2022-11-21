@@ -1,8 +1,9 @@
 import React from "react";
+import { STATUS_LIST } from "../App";
 
 function MoveTask(props) {
-  let statusId = props.statusList.indexOf(props.status);
-  let status = props.statusList[statusId - 1];
+  let statusId = STATUS_LIST.indexOf(props.status);
+  let status = STATUS_LIST[statusId - 1];
 
   const handlerChange = (event) => {
     props.resetHandler();

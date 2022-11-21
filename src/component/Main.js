@@ -1,14 +1,19 @@
 import React from "react";
 import List from "./List";
+import { STATUS_LIST } from "../App";
 
 function Main(props) {
-  const statusList = ["Backlog", "Ready", "In Progress", "Finished"];
-
   return (
     <main className="main">
       <div className="main__layout">
-        {statusList.map((title, index) => (
-          <List title={title} key={index} statusList={statusList} />
+        {STATUS_LIST.map((status, index) => (
+          <List
+            status={status}
+            key={index}
+            task={props.task}
+            addTask={props.addTask}
+            moveTask={props.moveTask}
+          />
         ))}
       </div>
     </main>

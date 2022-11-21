@@ -1,23 +1,23 @@
 import React from "react";
 import AddNewTask from "./AddNewTask";
 import MoveTask from "./MoveTask";
+import { STATUS_LIST } from "../App";
 
 function AddCard(props) {
-  let [clicked, showHandler] = React.useState(false);
+  let [clicked, setClicked] = React.useState(false);
 
-  const handlerClick = () => showHandler((clicked = true));
-  const resetHandler = () => showHandler((clicked = false));
+  const handlerClick = () => setClicked((clicked = true));
+  const resetHandler = () => setClicked((clicked = false));
 
   return (
     <>
       {(clicked &&
-        (props.status === props.statusList[0] ? (
+        (props.status === STATUS_LIST[0] ? (
           <AddNewTask addTask={props.addTask} resetHandler={resetHandler} />
         ) : (
           <MoveTask
             task={props.task}
             status={props.status}
-            statusList={props.statusList}
             moveTask={props.moveTask}
             resetHandler={resetHandler}
           />
