@@ -1,9 +1,6 @@
 import React from "react";
 
 function Item(props) {
-  // let [taskArr, setTaskArr] = React.useState(props.task);
-  // setTaskArr((taskArr = JSON.parse(localStorage.data)));
-
   if (props.task !== []) {
     return (
       <>
