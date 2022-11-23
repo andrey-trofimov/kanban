@@ -101,10 +101,14 @@ svg {
 
 .header__user-menu {
   opacity: 1;
+  visibility: visible;
 }
 
 .header__user-menu_closed {
   opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  cursor: default;
 }
 
 .header__user-menu::before {
@@ -121,6 +125,7 @@ svg {
 
 .user-menu__link {
   text-decoration: none;
+  color: black;
 }
 
 .user-menu__link:hover {
@@ -239,10 +244,24 @@ svg {
   background-color: #fff;
 }
 
-.button-add-card__label {
+.button_add-card_disabled,
+.button_add-card_disabled:hover {
+  color: #aaa;
+  cursor: auto;
+}
+
+.button-add-card__label,
+.button-add-card__label_disabled {
   padding-left: 18px;
   min-height: 14px;
+}
+
+.button-add-card__label {
   background: url(../src/img/add-card.svg) left 2px no-repeat;
+}
+
+.button-add-card__label_disabled {
+  background: url(../src/img/add-card-disabled.svg) left 2px no-repeat;
 }
 
 .button_submit-active {
@@ -259,12 +278,14 @@ svg {
 }
 
 .button_submit-inactive {
-  background-color: #cbcbcb;
-  color: #fff;
+  background-color: inherit;
+  color: #aaa;
   cursor: auto;
+  box-shadow: inset 0px 0px 3px 0px #aaa;
 }
 
-.input {
+.input,
+.select {
   font-size: 1.125rem;
   line-height: 1.25rem;
   padding: 7px 8px;
@@ -272,7 +293,17 @@ svg {
   background-color: #fff;
   border-radius: 5px;
   border: none;
+  outline-style: none;
+}
+
+.input {
   width: calc(100% - 16px);
+}
+
+.select {
+  appearance: none;
+  width: 100%;
+  background: url(../src/img/select-arrow.svg) no-repeat right 10px #fff;
 }
 
 /* ===== Footer styles ===== */

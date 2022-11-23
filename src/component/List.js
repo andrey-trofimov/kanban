@@ -1,20 +1,26 @@
 import React from "react";
 import Item from "./Item";
-import AddCard from "./AddCard";
+import AddNewTask from "./AddNewTask";
+import MoveTask from "./MoveTask";
 
 function List(props) {
+  let statusList = Object.keys(props.task);
+
   return (
     <>
       <div className="list">
         <h2 className="list__title">{props.status}</h2>
         <div className="list__scroll">
           <Item task={props.task} status={props.status} />
-          <AddCard
-            task={props.task}
-            status={props.status}
-            addTask={props.addTask}
-            moveTask={props.moveTask}
-          />
+          {(props.status === statusList[0] && (
+            <AddNewTask addTask={props.addTask} />
+          )) || (
+            <MoveTask
+              task={props.task}
+              status={props.status}
+              moveTask={props.moveTask}
+            />
+          )}
         </div>
       </div>
     </>

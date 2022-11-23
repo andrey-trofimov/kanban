@@ -1,116 +1,105 @@
-[
+{
+  "Backlog": [
     {
-        "id":18,
-        "status":"Backlog",
-        "name":"Login page – performance issues",
-        "description":"Bla bla bla"
+      "id": 18,
+      "name": "Login page – performance issues",
+      "description": "Bla bla bla"
     },
     {
-        "id":17,
-        "status":"Backlog",
-        "name":"Sprint bugfix",
-        "description":"Bla bla bla"
-    },
-    {
-        "id":16,
-        "status":"Ready",
-        "name":"Shop page – performance issues",
-        "description":"Bla bla bla"
-    },
-    {
-        "id":15,
-        "status":"Ready",
-        "name":"Checkout bugfix",
-        "description":"Bla bla bla"
-    },
-    {
-        "id":14,
-        "status":"Ready",
-        "name":"Shop bug1",
-        "description":"Bla bla bla"
-    },
-    {
-        "id":13,
-        "status":"Ready",
-        "name":"Shop bug2",
-        "description":"Bla bla bla"
-    },
-    {
-        "id":12,
-        "status":"Ready",
-        "name":"Shop bug3",
-        "description":"Bla bla bla"
-    },
-    {
-        "id":11,
-        "status":"Ready",
-        "name":"Shop bug4",
-        "description":"Bla bla bla"
-    },
-    {
-        "id":10,
-        "status":"Ready",
-        "name":"Shop bug5",
-        "description":"Bla bla bla"
-    },
-    {
-        "id":9,
-        "status":"Ready",
-        "name":"Shop bug6",
-        "description":"Bla bla bla"
-    },
-    {
-        "id":8,
-        "status":"Ready",
-        "name":"Shop bug7",
-        "description":"Bla bla bla"
-    },
-    {
-        "id":7,
-        "status":"Ready",
-        "name":"Shop bug8",
-        "description":"Bla bla bla"
-    },
-    {
-        "id":6,
-        "status":"Ready",
-        "name":"Shop bug9",
-        "description":"Bla bla bla"
-    },
-    {
-        "id":5,
-        "status":"Ready",
-        "name":"Shop bug10",
-        "description":"Bla bla bla"
-    },
-    {
-        "id":4,
-        "status":"Ready",
-        "name":"Shop page – performance issues",
-        "description":"Bla bla bla"
-    },
-    {
-        "id":3,
-        "status":"In Progress",
-        "name":"User page – performance issues",
-        "description":"Bla bla bla"
-    },
-    {
-        "id":2,
-        "status":"In Progress",
-        "name":"Auth bugfix",
-        "description":"Bla bla bla"
-    },
-    {
-        "id":1,
-        "status":"Finished",
-        "name":"Main page – performance issues",
-        "description":"Bla bla bla"
-    },
-    {
-        "id":0,
-        "status":"Finished",
-        "name":"Main page bugfix",
-        "description":"Bla bla bla"
+      "id": 17,
+      "name": "Sprint bugfix",
+      "description": "Bla bla bla"
     }
-]
+  ],
+  "Ready": [
+    {
+      "id": 16,
+      "name": "Shop page – performance issues",
+      "description": "Bla bla bla"
+    },
+    {
+      "id": 15,
+      "name": "Checkout bugfix",
+      "description": "Bla bla bla"
+    },
+    {
+      "id": 14,
+      "name": "Shop bug1",
+      "description": "Bla bla bla"
+    },
+    {
+      "id": 13,
+      "name": "Shop bug2",
+      "description": "Bla bla bla"
+    },
+    {
+      "id": 12,
+      "name": "Shop bug3",
+      "description": "Bla bla bla"
+    },
+    {
+      "id": 11,
+      "name": "Shop bug4",
+      "description": "Bla bla bla"
+    },
+    {
+      "id": 10,
+      "name": "Shop bug5",
+      "description": "Bla bla bla"
+    },
+    {
+      "id": 9,
+      "name": "Shop bug6",
+      "description": "Bla bla bla"
+    },
+    {
+      "id": 8,
+      "name": "Shop bug7",
+      "description": "Bla bla bla"
+    },
+    {
+      "id": 7,
+      "name": "Shop bug8",
+      "description": "Bla bla bla"
+    },
+    {
+      "id": 6,
+      "name": "Shop bug9",
+      "description": "Bla bla bla"
+    },
+    {
+      "id": 5,
+      "name": "Shop bug10",
+      "description": "Bla bla bla"
+    },
+    {
+      "id": 4,
+      "name": "Shop page – performance issues",
+      "description": "Bla bla bla"
+    }
+  ],
+  "In Progress": [
+    {
+      "id": 3,
+      "name": "User page – performance issues",
+      "description": "Bla bla bla"
+    },
+    {
+      "id": 2,
+      "name": "Auth bugfix",
+      "description": "Bla bla bla"
+    }
+  ],
+  "Finished": [
+    {
+      "id": 1,
+      "name": "Main page – performance issues",
+      "description": "Bla bla bla"
+    },
+    {
+      "id": 0,
+      "name": "Main page bugfix",
+      "description": "Bla bla bla"
+    }
+  ]
+}

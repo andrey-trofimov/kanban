@@ -1,8 +1,8 @@
 import React from "react";
 import imgSrc from "../img/user-avatar.svg";
 
-function User() {
-  let [clicked, setClicked] = React.useState(false);
+function User(props) {
+  let [clicked, setClicked] = React.useState(true);
   const handlerClick = () => setClicked((clicked = !clicked));
 
   let style = (clicked && "_closed") || "";
@@ -10,16 +10,11 @@ function User() {
   let UserMenu = (
     <div className={`header__user-menu${style} user-menu`}>
       <ul className="user-menu__ul">
-        <li className="user-menu__li">
-          <a href="/" className="user-menu__link">
-            Profile
-          </a>
-        </li>
-        <li className="user-menu__li">
-          <a href="/" className="user-menu__link">
-            Log Out
-          </a>
-        </li>
+        {props.userMenuData.map((item, index) => (
+          <li className="user-menu__li" onClick={item.action} key={index}>
+            <span className="user-menu__link">{item.title}</span>
+          </li>
+        ))}
       </ul>
     </div>
   );

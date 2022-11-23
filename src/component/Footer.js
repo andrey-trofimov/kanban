@@ -1,16 +1,12 @@
-import { STATUS_LIST } from "../App";
+import React from "react";
 
 function Footer(props) {
   const user = "coder";
   const date = new Date();
 
-  let activeTasks = 0;
-  let finishedTasks = 0;
-
-  props.task.forEach((task) => {
-    if (task.status === STATUS_LIST[0]) activeTasks++;
-    if (task.status === STATUS_LIST[3]) finishedTasks++;
-  });
+  let statusList = Object.keys(props.task);
+  let activeTasks = props.task[statusList[0]].length;
+  let finishedTasks = props.task[statusList[3]].length;
 
   return (
     <footer className="footer">
