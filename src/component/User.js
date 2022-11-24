@@ -1,5 +1,6 @@
 import React from "react";
 import imgSrc from "../img/user-avatar.svg";
+import { Link } from "react-router-dom";
 
 function User(props) {
   let [clicked, setClicked] = React.useState(true);
@@ -12,7 +13,13 @@ function User(props) {
       <ul className="user-menu__ul">
         {props.userMenuData.map((item, index) => (
           <li className="user-menu__li" onClick={item.action} key={index}>
-            <span className="user-menu__link">{item.title}</span>
+            <Link
+              to={(item.href && item.href) || window.location}
+              className="a"
+              key={index}
+            >
+              {item.title}
+            </Link>
           </li>
         ))}
       </ul>

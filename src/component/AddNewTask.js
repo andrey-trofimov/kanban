@@ -3,22 +3,24 @@ import { useRef } from "react";
 import AddCard from "./AddCard";
 
 function AddNewTask(props) {
+  let [clicked, setClicked] = React.useState(false);
   const inputRef = useRef(null);
 
-  let [clicked, setClicked] = React.useState(false);
   const handlerClick = () => setClicked((clicked = true));
   const resetHandler = () => setClicked((clicked = false));
 
   let [style, changeState] = React.useState("button button_submit-inactive");
   const handlerChenge = (event) => {
-    event.target.value && changeState((style = "button button_submit-active"));
+    if (event.target.value)
+      changeState((style = "button button_submit-active"));
+    if (!event.target.value)
+      changeState((style = "button button_submit-inactive"));
   };
 
   const handlerSubmit = () => {
     if (inputRef.current.value) {
       props.addTask(inputRef.current.value);
       resetHandler();
-      changeState((style = "button button_submit-inactive"));
     }
   };
 

@@ -1,12 +1,15 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Header from "./component/Header";
 import Main from "./component/Main";
+import Description from "./component/Description";
 import Footer from "./component/Footer";
 import dataMock from "./dataMock.json";
+import { Layout } from "./component/Layout";
 
+// let initialTask = dataMock;
 let initialTask = JSON.parse(localStorage.data) || dataMock;
 let statusList = Object.keys(initialTask);
-// let userMenuData = [];
 
 class App extends React.Component {
   constructor(props) {
@@ -18,17 +21,20 @@ class App extends React.Component {
 
   addTask = (name) => {
     let newTask = {};
-    newTask.id = new Date();
+    newTask.id = this.createTaskArr().length + 1;
     newTask.name = name;
     newTask.description = "";
 
-    initialTask[statusList[0]].push(newTask);
-    this.writeTask(initialTask);
+    let data = this.state.task;
+
+    data[statusList[0]].push(newTask);
+    this.writeTask(data);
   };
 
   moveTask = (id, taskId) => {
-    let currentList = this.state.task[statusList[taskId]];
-    let nextList = this.state.task[statusList[taskId + 1]];
+    let data = this.state.task;
+    let currentList = data[statusList[taskId]];
+    let nextList = data[statusList[taskId + 1]];
 
     currentList.forEach((task, index) => {
       if (String(task.id) === id) {
@@ -37,41 +43,96 @@ class App extends React.Component {
       }
     });
 
-    this.writeTask(initialTask);
+    this.writeTask(data);
+  };
+
+  editDescription = (taskId, description) => {
+    let data = this.state.task;
+    for (let key in data) {
+      data[key].forEach(
+        (task) => task.id === taskId && (task.description = description)
+      );
+    }
+
+    // data.forEach((taskArr) =>
+    //   taskArr.forEach(
+    //     (task) => task.id === taskId && (task.description = description)
+    //   )
+    // );
+    this.writeTask(data);
   };
 
   resetBoard = () => {
-    initialTask = { Backlog: [], Ready: [], "In Progress": [], Finished: [] };
-    this.writeTask(initialTask);
+    let data = { Backlog: [], Ready: [], "In Progress": [], Finished: [] };
+    this.writeTask(data);
   };
 
   loadMock = () => {
-    this.writeTask(dataMock);
+    let data = dataMock;
+    this.writeTask(data);
   };
 
   writeTask = (task) => {
-    this.setState({ task: task });
     localStorage.data = JSON.stringify(task);
+    this.setState({ task: task });
+  };
+
+  createTaskArr = () => {
+    let arrOfTaskArr = Object.values(this.state.task);
+    let allTasks = [];
+
+    arrOfTaskArr.forEach((taskArr) => {
+      taskArr && taskArr.map((task) => allTasks.push(task));
+    });
+
+    return allTasks;
   };
 
   render() {
     let userMenuData = [
-      { link: "/", title: "Profile", action: null },
-      { link: "/", title: "Log Out", action: null },
-      { link: "/", title: "Load mock", action: this.loadMock },
-      { link: "/", title: "Reset", action: this.resetBoard },
+      { href: "", title: "Profile", action: null },
+      { href: "", title: "Log Out", action: null },
+      { href: "/", title: "Load mock", action: this.loadMock },
+      { href: "/", title: "Reset", action: this.resetBoard },
     ];
 
     return (
-      <div className="container">
-        <Header userMenuData={userMenuData} />
-        <Main
-          task={this.state.task}
-          addTask={this.addTask}
-          moveTask={this.moveTask}
-        />
-        <Footer task={this.state.task} />
-      </div>
+      <>
+        <div className="container">
+          <Header userMenuData={userMenuData} />
+
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route
+                key={"0"}
+                index
+                element={
+                  <Main
+                    task={this.state.task}
+                    addTask={this.addTask}
+                    moveTask={this.moveTask}
+                  />
+                }
+              />
+
+              {this.createTaskArr().map((task, index) => (
+                <Route
+                  key={`${index + 1}`}
+                  path={`${task.id}`}
+                  element={
+                    <Description
+                      task={task}
+                      editDescription={this.editDescription}
+                    />
+                  }
+                />
+              ))}
+            </Route>
+          </Routes>
+
+          <Footer task={this.state.task} />
+        </div>
+      </>
     );
   }
 }

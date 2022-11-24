@@ -3,19 +3,19 @@ import List from "./List";
 
 function Main(props) {
   return (
-    <main className="main">
+    <>
       <div className="main__layout">
         {Object.keys(props.task).map((taskStatus, index) => (
           <List
             task={props.task}
             status={taskStatus}
-            key={index}
+            key={taskStatus}
             addTask={props.addTask}
             moveTask={props.moveTask}
           />
         ))}
       </div>
-    </main>
+    </>
   );
 }
 

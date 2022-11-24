@@ -10,7 +10,7 @@ function List(props) {
     <>
       <div className="list">
         <h2 className="list__title">{props.status}</h2>
-        <div className="list__scroll">
+        <div className="list__scroll scroll">
           <Item task={props.task} status={props.status} />
           {(props.status === statusList[0] && (
             <AddNewTask addTask={props.addTask} />
