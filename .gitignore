@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+bash.exe.stackdump
+App.test.js
+reportWebVitals.js
+setupTests.js
