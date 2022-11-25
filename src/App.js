@@ -8,7 +8,8 @@ import dataMock from "./dataMock.json";
 import { Layout } from "./component/Layout";
 
 // let initialTask = dataMock;
-let initialTask = JSON.parse(localStorage.data) || dataMock;
+let initialTask =
+  (localStorage.data && JSON.parse(localStorage.data)) || dataMock;
 let statusList = Object.keys(initialTask);
 
 class App extends React.Component {
@@ -54,11 +55,6 @@ class App extends React.Component {
       );
     }
 
-    // data.forEach((taskArr) =>
-    //   taskArr.forEach(
-    //     (task) => task.id === taskId && (task.description = description)
-    //   )
-    // );
     this.writeTask(data);
   };
 
@@ -70,6 +66,7 @@ class App extends React.Component {
   loadMock = () => {
     let data = dataMock;
     this.writeTask(data);
+    document.location.reload();
   };
 
   writeTask = (task) => {

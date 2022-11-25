@@ -90,7 +90,7 @@ svg {
 .header__user,
 .header__user_closed {
   display: block;
-  width: 60px;
+  min-width: 60px;
   height: 40px;
   cursor: pointer;
   margin-top: 8px;
@@ -164,7 +164,7 @@ svg {
 
 @media screen and (max-width: 768px) {
   .header__title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 11px;
   }
 }
@@ -416,6 +416,10 @@ svg {
     width: 100%;
     height: calc(100vh - 400px);
   }
+
+  .p {
+    max-width: none;
+  }
 }
 
 /* ===== Footer styles ===== */
@@ -437,8 +441,17 @@ svg {
 /* ===== Footer mobile style ====== */
 
 @media screen and (max-width: 768px) {
+  .footer {
+    font-size: 1rem;
+  }
+
   .footer__layout {
     flex-direction: column;
     text-align: center;
+    padding: 0;
+  }
+
+  .footer__score_active {
+    margin-right: 10px;
   }
 }

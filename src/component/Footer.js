@@ -13,10 +13,10 @@ function Footer(props) {
       <div className="footer__layout">
         <div className="footer_column">
           <span className="footer__score_active">
-            Active tasks: {activeTasks}
+            <nobr>Active tasks: {activeTasks}</nobr>
           </span>
           <span className="footer__score_finished">
-            Finished tasks: {finishedTasks}
+            <nobr>Finished tasks: {finishedTasks}</nobr>
           </span>
         </div>
         <span className="footer__user">
