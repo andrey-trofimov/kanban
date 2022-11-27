@@ -64,8 +64,7 @@ class App extends React.Component {
   };
 
   loadMock = () => {
-    let data = dataMock;
-    this.writeTask(data);
+    this.writeTask(dataMock);
     document.location.reload();
   };
 
@@ -124,6 +123,18 @@ class App extends React.Component {
                   }
                 />
               ))}
+
+              <Route
+                key={"0-404"}
+                path="*"
+                element={
+                  <Main
+                    task={this.state.task}
+                    addTask={this.addTask}
+                    moveTask={this.moveTask}
+                  />
+                }
+              />
             </Route>
           </Routes>
 
