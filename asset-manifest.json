@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.765c8c7f.css",
-    "main.js": "/static/js/main.833dd777.js",
-    "static/js/787.0dc1bfd1.chunk.js": "/static/js/787.0dc1bfd1.chunk.js",
-    "static/media/user-avatar.svg": "/static/media/user-avatar.9e0406666da8e2e0d6ba57b4c2af8b0a.svg",
-    "index.html": "/index.html",
-    "static/media/add-card-disabled.svg": "/static/media/add-card-disabled.026f3ccc0f53f5417008.svg",
-    "static/media/add-card.svg": "/static/media/add-card.d8fce16f935c6ec2b3e2.svg",
-    "static/media/edit-hover.svg": "/static/media/edit-hover.e7648c664fecb7a14701.svg",
-    "static/media/cross.svg": "/static/media/cross.b330e8fddf3b4fab32d94d23d3da5382.svg",
-    "static/media/rhomb.svg": "/static/media/rhomb.9b1e9463a0d58eecb054.svg",
-    "static/media/select-arrow.svg": "/static/media/select-arrow.587fedf0a66ed38d3a7f.svg",
-    "main.765c8c7f.css.map": "/static/css/main.765c8c7f.css.map",
-    "main.833dd777.js.map": "/static/js/main.833dd777.js.map",
-    "787.0dc1bfd1.chunk.js.map": "/static/js/787.0dc1bfd1.chunk.js.map"
+    "main.css": "/kanban/static/css/main.40985497.css",
+    "main.js": "/kanban/static/js/main.22804560.js",
+    "static/js/787.0dc1bfd1.chunk.js": "/kanban/static/js/787.0dc1bfd1.chunk.js",
+    "static/media/user-avatar.svg": "/kanban/static/media/user-avatar.9e0406666da8e2e0d6ba57b4c2af8b0a.svg",
+    "index.html": "/kanban/index.html",
+    "static/media/add-card-disabled.svg": "/kanban/static/media/add-card-disabled.026f3ccc0f53f5417008.svg",
+    "static/media/add-card.svg": "/kanban/static/media/add-card.d8fce16f935c6ec2b3e2.svg",
+    "static/media/edit-hover.svg": "/kanban/static/media/edit-hover.e7648c664fecb7a14701.svg",
+    "static/media/cross.svg": "/kanban/static/media/cross.b330e8fddf3b4fab32d94d23d3da5382.svg",
+    "static/media/rhomb.svg": "/kanban/static/media/rhomb.9b1e9463a0d58eecb054.svg",
+    "static/media/select-arrow.svg": "/kanban/static/media/select-arrow.587fedf0a66ed38d3a7f.svg",
+    "main.40985497.css.map": "/kanban/static/css/main.40985497.css.map",
+    "main.22804560.js.map": "/kanban/static/js/main.22804560.js.map",
+    "787.0dc1bfd1.chunk.js.map": "/kanban/static/js/787.0dc1bfd1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.765c8c7f.css",
-    "static/js/main.833dd777.js"
+    "static/css/main.40985497.css",
+    "static/js/main.22804560.js"
   ]
 }
